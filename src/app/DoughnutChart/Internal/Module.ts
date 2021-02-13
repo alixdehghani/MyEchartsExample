@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BarChartComponent } from './BarChartComponent';
+import { DoughnutChartWidgetComponent } from './DoughnutChartComponent';
 
 
 @NgModule({
     declarations: [
-        BarChartComponent
+        DoughnutChartWidgetComponent
     ],
     imports: [
         CommonModule,
         RouterModule
     ],
     exports: [
-        BarChartComponent
+        DoughnutChartWidgetComponent
     ]
 })
 export class Module { }

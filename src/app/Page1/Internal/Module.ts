@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { NgxEchartsModule } from 'ngx-echarts';
 import { BarChartModule } from 'src/app/BarChart/Index';
 import { Page1Component } from './Page1Component';
 
@@ -15,7 +14,6 @@ const routes: Routes = [
         Page1Component
     ],
     imports: [
-        NgxEchartsModule.forChild(),
         RouterModule.forChild(routes),
         BarChartModule
     ]

@@ -1,0 +1,1 @@
+export { Module as DoughnutModule } from './Internal/Module';

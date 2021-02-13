@@ -1,8 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+
+import * as echarts from 'echarts/core';
+import { BarChart } from 'echarts/charts';
+import { TitleComponent, TooltipComponent, GridComponent, LegendComponent } from 'echarts/components';
+import { SVGRenderer } from 'echarts/renderers';
+echarts.use([TitleComponent, TooltipComponent, GridComponent, BarChart, SVGRenderer, LegendComponent]);
+
 
 @Component({
     selector: 'app-bar-chart',
-    template: `<div echarts [options]="options"></div>`
+    template: `<div #Echarts></div>`
 })
 
 export class BarChartComponent implements OnInit {
@@ -17,6 +24,7 @@ export class BarChartComponent implements OnInit {
 
     options: object;
 
+    @ViewChild("Echarts", {static: true}) private _echartsElementRef: ElementRef;
 
     ngOnInit() {
         this._charColorPalette = this._colorPallet;
@@ -77,7 +85,7 @@ export class BarChartComponent implements OnInit {
     }
 
     private _setParams(): void {
-        
+
         this._textColor = '#000';
         this.options = {
             color: this._charColorPalette,
@@ -122,5 +130,10 @@ export class BarChartComponent implements OnInit {
             },
             series: this._series
         }
+
+        var myChart = echarts.init(this._echartsElementRef.nativeElement,null, {renderer: 'svg', height:400,width:600});
+        myChart.setOption({
+            ...this.options
+        });
     }
 }

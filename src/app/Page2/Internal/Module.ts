@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { NgxEchartsModule } from 'ngx-echarts';
 import { BarChartModule } from 'src/app/BarChart/Index';
+import { DoughnutModule } from 'src/app/DoughnutChart/Index';
 import { Page2Component } from './Page2Component';
 
 const routes: Routes = [
@@ -15,9 +15,8 @@ const routes: Routes = [
         Page2Component
     ],
     imports: [
-        NgxEchartsModule.forChild(),
         RouterModule.forChild(routes),
-        BarChartModule
+        DoughnutModule
     ]
 })
 export class Module { }

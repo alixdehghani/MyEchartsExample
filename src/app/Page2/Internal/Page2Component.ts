@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-page2',
-    template: `<app-bar-chart [colorPallet]="colorPalette"></app-bar-chart>`
+    template: `<app-doughnut-chart [colorPallet]="colorPalette"></app-doughnut-chart>`
 })
 
 export class Page2Component implements OnInit {
