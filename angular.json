@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MyEchartsExample"
+    }
+  },
+  "defaultProject": "MyEchartsExample",
+  "cli": {
+    "analytics": "2d03d82f-34ca-4c66-8264-e99d3f3a15ff"
+  }
 }

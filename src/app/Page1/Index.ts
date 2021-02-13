@@ -1,0 +1,1 @@
+export { Module as Page1Module } from './Internal/Module';
