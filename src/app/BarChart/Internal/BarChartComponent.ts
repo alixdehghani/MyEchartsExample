@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-bar-chart',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BarChartComponent implements OnInit {
-
+    @Input('colorPallet') private _colorPallet: string[];
     private _textColor: string;
     private _charColorPalette: string[];
     private _legend: object;
@@ -19,7 +19,7 @@ export class BarChartComponent implements OnInit {
 
 
     ngOnInit() {
-        this._charColorPalette = ["#1A0011", "#28011A", "#45012D", "#6C0246", "#9C0365", "#BA0379", "#D8048C", "#E243A9", "#E767B9", "#EF9BD1", "#F7CDE8"]
+        this._charColorPalette = this._colorPallet;
         this._xAxis = {
             type: 'value',
         };
